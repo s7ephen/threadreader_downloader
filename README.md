@@ -33,6 +33,8 @@ To use m3u8_download:
 
 This will use ffmpeg to parse and follow/download all the m3u8 interlinked files and download (and reassemble) the media fragments and save to tweet_20.mp4 or whatever filename you give it.
 
+# Downloading Twitter Videos with m3u8_download:
+
 You can use this to download videos directly from twitter also. To do this:
 - Turn on your browser's "Developer Tools"
 - Load (or reload) the tweet URL in your browser.
