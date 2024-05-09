@@ -7,7 +7,7 @@ To use this docker container:
 
 `docker run -v <dir_on_hostOS_for_downloads>/:/workdir -it sa7ori/threadreader_downloader` 
 
-![]("./readme_assets/threadreader_downloader_howto.png")
+![]("readme_assets/threadreader_downloader_howto.png")
 it will launch right into the downloader asking for a URL.
 
 Note: `<dir_on_hostOS_for_downloads>` is the fully qualified path of the directory
@@ -45,7 +45,7 @@ Example:
 ```
 m3u8_download 'https://video.twimg.com/ext_tw_video/1763235266049777665/pu/pl/2fbRnL9S1NDv6Wcw.m3u8?variant_version=1&tag=12&container=cmaf' video.mp4
 ```  
-![]("./readme_assets/m3u8_download_howto.png")
-![]("./readme_assets/m3u8_download_howto2.png")
+![]("readme_assets/m3u8_download_howto.png")
+![]("readme_assets/m3u8_download_howto2.png")
 
 
