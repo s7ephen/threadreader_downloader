@@ -1,0 +1,24 @@
+
+Help ()
+{
+  echo "USAGE: "
+  echo "------ "
+  echo "--> $0 -h (this help)"
+  echo "--> $0 <URL_TO_M3U8> <FILENAME_TO_SAVE_TO>"
+
+}
+
+if [ $# -eq 0 ]; then
+    >&2 Help 
+    exit 1
+fi
+while getopts ":h" option; do
+   case $option in
+      h) # display Help
+         Help
+         exit;;
+   esac
+done
+echo "Downloading: $1";
+echo "To File: $2";
+ffmpeg -i "$1" -bsf:a aac_adtstoasc -vcodec copy -c copy -crf 50 $2
