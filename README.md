@@ -1,20 +1,24 @@
 
-Download each of the tweets in a ThreadReaderApp.com thread.
-This will also download all the media in the tweet.
+Automatically download each tweet in a ThreadReaderApp-archived Twitter thread.
+This will also download all the media in each of the tweets.
 
 # How to use it:
 To use this docker container:
 
 `docker run -v <dir_on_hostOS_for_downloads>/:/workdir -it sa7ori/threadreader_downloader` 
 
-![](readme_assets/threadreader_downloader_howto.png)
 it will launch right into the downloader asking for a URL.
+![](readme_assets/threadreader_downloader_howto.png)
+
+Then after everything has run, you'll get a directory like this:
+
+![](readme_assets/threadreader_downloader_howto2.png)
 
 Note: `<dir_on_hostOS_for_downloads>` is the fully qualified path of the directory
 that will be shared into the docker container. The container will download and
 log everything into that shared directory so it is available on the host.
 
-Example: 
+Example:
  
 `docker run -v /home/s7ephen/great_twitterthread/:/workdir -it sa7ori/threadreader_downloader`
 
