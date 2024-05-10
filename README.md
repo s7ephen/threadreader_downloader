@@ -56,4 +56,17 @@ m3u8_download 'https://video.twimg.com/ext_tw_video/1763235266049777665/pu/pl/2f
 ```  
 ![](readme_assets/m3u8_download_howto2.png)
 
+# Extra Note: Downloading Multiple Twitter Threads
+This whole repo was just a quick-hack so it isnt polished up to take command-line,
+arguments or have features like reading URLs from a file (as input).
+
+I dont know who would find this useful (I make similar notes like this for
+myself, like I'm writing to a dumber future-self), but here is a simple mod 
+to download multiple Twitter threads using what's here...with minimal asspain.
+
+So to download multiple Twitter threads. Put all the URLs in a text file (one per line) then:
+`while read in; do ./download_threadreaderapp_thread.py "$in"; done < threads_to_download.txt`
+![](readme_assets/quick_mod_to_download_multiple_threads.png)
+then you'll have a directry like this:
+![](readme_assets/quick_mod_to_download_multiple_threads2.png)
 
