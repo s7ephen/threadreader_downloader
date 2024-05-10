@@ -1,6 +1,6 @@
 
 Automatically download each tweet in a ThreadReaderApp-archived Twitter thread.
-This will also download all the media in each of the tweets.
+This will also download all the media in each of the tweets using [TWMD](https://github.com/mmpx12/twitter-media-downloader)
 
 # How to use it:
 To use this docker container:
