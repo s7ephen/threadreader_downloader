@@ -67,9 +67,9 @@ for element in tweets:
     os.mkdir(tweet_order);os.chdir(tweet_order)
     print "\n\t=== TEXT OF TWEET ==="
     print "Tweet text: "
-    print element.text
+    print element.text.encode('utf-8')
     with open("tweet.txt", "w") as tweet_f:
-        tweet_f.write(element.text)
+        tweet_f.write(element.text.encode('utf-8'))
         print "\t[+] wrote to: tweet.txt"
         tweet_f.close()
     print "\n\t=== RAW TEXT ==="
