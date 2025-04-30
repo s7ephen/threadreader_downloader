@@ -26,7 +26,7 @@
 #  
 from lxml import html
 from lxml import etree
-import requests, os
+import requests, os, time
 # url = "https://threadreaderapp.com/thread/1715789046943740102.html"
 
 
@@ -90,6 +90,8 @@ def doit(url):
         print "-------------------------------------"
         
         print "Changing back to the tweet thread directory."
+        time.sleep(5)
+        print "Sleeping 5 seconds before commencing to avoid rate-limit"
         os.chdir('..')
         i+=1
     os.chdir(root_run)
@@ -105,7 +107,7 @@ if __name__ == "__main__":
             #print url
             doit(url)
             print("Sleeping for 10 seconds before commencing, to not clobber ThreadreaderApp server.")
-            import time; time.sleep(10)
+            time.sleep(10)
     else:
         url = raw_input("Enter the threadreaderapp URL> ")
         #print url
