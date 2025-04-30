@@ -22,6 +22,9 @@ Example:
  
 `docker run -v /home/s7ephen/great_twitterthread/:/workdir -it sa7ori/threadreader_downloader`
 
+## Bulk Thread Downloading
+Alternatively you can create a file called `threads_to_download.txt` with one threadreaderapp URL per line. If this file exists in the directory shared into the container, then it will use that instead of the manual user input.
+
 # Link to the Dockerhub:
 https://hub.docker.com/r/sa7ori/threadreader_downloader
 
