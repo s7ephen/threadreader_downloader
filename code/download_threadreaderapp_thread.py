@@ -31,6 +31,7 @@ import requests, os
 
 
 def doit(url):
+    root_run = os.path.abspath(os.curdir)
     print("\n DOWNLOADING FROM: ", url)
     page = requests.get(url)
     tree = html.fromstring(page.content)
@@ -91,6 +92,7 @@ def doit(url):
         print "Changing back to the tweet thread directory."
         os.chdir('..')
         i+=1
+    os.chdir(root_run)
 
 if __name__ == "__main__":
     if os.path.exists("threads_to_download.txt"):
