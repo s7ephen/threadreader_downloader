@@ -23,7 +23,6 @@ Example:
 `docker run -v /home/s7ephen/great_twitterthread/:/workdir -it sa7ori/threadreader_downloader`
 
 ## Bulk Thread Downloading
-Alternatively you can create a file called `threads_to_download.txt` with one threadreaderapp URL per line. If this file exists in the directory shared into the container, then it will use that instead of the manual user input.
 
 # Link to the Dockerhub:
 https://hub.docker.com/r/sa7ori/threadreader_downloader
@@ -60,15 +59,15 @@ m3u8_download 'https://video.twimg.com/ext_tw_video/1763235266049777665/pu/pl/2f
 ![](readme_assets/m3u8_download_howto2.png)
 
 # Extra Note: Downloading Multiple Twitter Threads
-This whole repo was just a quick-hack so it isnt polished up to take command-line,
-arguments or have features like reading URLs from a file (as input).
+Create a file called `threads_to_download.txt` with one threadreaderapp URL per line. If this file exists in the directory shared into the container, then it will use that instead of request the URL interactively.
 
-I dont know who would find this useful (I make similar notes like this for
-myself, like I'm writing to a dumber future-self), but here is a simple mod 
-to download multiple Twitter threads using what's here...with minimal asspain.
+It will sleep for a bit in between downloads to avoid flooding the Twitter/ThreadReader servers. At the end you will have a directory like this:
+![](readme_assets/quick_mod_to_download_multiple_threads2.png)
 
-So to download multiple Twitter threads. Put all the URLs in a text file (one per line) then:
+## Old method:
+Previously you could drop to the container's shell and do something like this:
 `while read in; do ./download_threadreaderapp_thread.py "$in"; done < threads_to_download.txt`
+with one URL per line separated by a `\n` newline, but that was just quick hack on top of this whole thing which itself was a quick hack. 
 ![](readme_assets/quick_mod_to_download_multiple_threads.png)
 then you'll have a directry like this:
 ![](readme_assets/quick_mod_to_download_multiple_threads2.png)
